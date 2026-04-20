@@ -17,6 +17,7 @@ npm install && npm run dev
 
 | Dark Mode | Light Mode |
 |---|---|
+| <img width="959" alt="Dark Mode Interface" src="https://github.com/user-attachments/assets/85b616c3-c160-4e4b-820c-9d0544e3468e" /> | <img width="959" alt="Light Mode Interface" src="https://github.com/user-attachments/assets/4e0ce257-9055-4b24-98a8-6b18388fc4fe" /> |
 | Deep navy canvas with glassmorphism panels | Clean white layout with soft blue-grey accents |
 | Drag nodes → connect → simulate in real-time | Persistent theme preference via `localStorage` |
 
@@ -136,7 +137,7 @@ React Flow docs warn that passing a new `nodeTypes` object on every render cause
 
 ```bash
 # 1. Clone the repository
-git clone <https://github.com/brardilraj/HR-Workflow-Designer>
+git clone https://github.com/brardilraj/HR-Workflow-Designer
 cd hr-workflow-designer
 
 # 2. Install dependencies
