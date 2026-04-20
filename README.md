@@ -225,8 +225,5 @@ npm run lint     # ESLint with TypeScript rules
 
 ---
 
-## 👤 Author
-
-Built as a full-stack frontend case study for the **Tredence Full Stack Engineer** role.
 
 > *"Good software is built in layers: clean types at the bottom, clean state in the middle, and clean UI on top."*
