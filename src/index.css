@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Design Tokens ─────────────────────────────────────────────────── */
+:root {
+  --bg-primary:     #0d1117;
+  --bg-secondary:   #161b22;
+  --bg-panel:       #1c2230;
+  --bg-panel-hover: #212a3e;
+  --border-subtle:  rgba(99, 120, 171, 0.18);
+  --border-medium:  rgba(99, 120, 171, 0.32);
+  --text-primary:   #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted:     #4d5566;
+  --indigo:         #6366f1;
+  --indigo-light:   #818cf8;
+  --indigo-glow:    rgba(99, 102, 241, 0.25);
+  --violet:         #8b5cf6;
+  --emerald:        #10b981;
+  --emerald-glow:   rgba(16, 185, 129, 0.2);
+  --amber:          #f59e0b;
+  --rose:           #f43f5e;
+  --sky:            #38bdf8;
+  --shadow-panel:   0 8px 32px rgba(0,0,0,0.48);
+  --shadow-node:    0 4px 20px rgba(0,0,0,0.4);
+  --shadow-glow-indigo: 0 0 20px rgba(99,102,241,0.35);
+  --radius-node:    12px;
+  --radius-panel:   14px;
+}
+
+/* ── Light Mode Token Overrides ─────────────────────────────────────── */
+[data-theme="light"] {
+  --bg-primary:     #f4f6fb;
+  --bg-secondary:   #ffffff;
+  --bg-panel:       #eef1f8;
+  --bg-panel-hover: #e4e8f4;
+  --border-subtle:  rgba(99, 120, 171, 0.15);
+  --border-medium:  rgba(99, 120, 171, 0.28);
+  --text-primary:   #0f172a;
+  --text-secondary: #475569;
+  --text-muted:     #94a3b8;
+  --indigo:         #6366f1;
+  --indigo-light:   #4f46e5;
+  --indigo-glow:    rgba(99, 102, 241, 0.15);
+  --shadow-panel:   0 4px 24px rgba(99,120,171,0.12);
+  --shadow-node:    0 2px 12px rgba(99,120,171,0.18);
+  --shadow-glow-indigo: 0 0 16px rgba(99,102,241,0.18);
+}
+
+/* Light mode React Flow overrides */
+[data-theme="light"] .react-flow__background { opacity: 0.7; }
+[data-theme="light"] .react-flow__controls {
+  background: #ffffff !important;
+  border: 1px solid rgba(99,120,171,0.18) !important;
+  box-shadow: 0 4px 16px rgba(99,120,171,0.12) !important;
+}
+[data-theme="light"] .react-flow__controls-button {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(99,120,171,0.12) !important;
+  color: #475569 !important;
+}
+[data-theme="light"] .react-flow__controls-button:hover {
+  background: #f4f6fb !important;
+  color: #0f172a !important;
+}
+[data-theme="light"] .react-flow__minimap {
+  background: #ffffff !important;
+  border: 1px solid rgba(99,120,171,0.18) !important;
+  box-shadow: 0 4px 16px rgba(99,120,171,0.12) !important;
+}
+[data-theme="light"] .react-flow__minimap-mask { fill: rgba(244,246,251,0.7) !important; }
+[data-theme="light"] .react-flow__edge-path { stroke: #818cf8 !important; }
+
+/* ── Smooth theme transition ────────────────────────────────────────── */
+*, *::before, *::after {
+  transition:
+    background-color 0.2s ease,
+    border-color     0.2s ease,
+    color            0.1s ease,
+    box-shadow       0.2s ease;
+}
+
+
+/* ── Scrollbar ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-medium); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--indigo); }
+
+/* ── React Flow canvas overrides ───────────────────────────────────── */
+.react-flow__renderer { background: transparent !important; }
+.react-flow__background { opacity: 0.5; }
+
+/* Controls */
+.react-flow__controls {
+  background: var(--bg-panel) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 10px !important;
+  box-shadow: var(--shadow-panel) !important;
+  overflow: hidden;
+}
+.react-flow__controls-button {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  color: var(--text-secondary) !important;
+  transition: all 0.15s ease;
+}
+.react-flow__controls-button:hover {
+  background: var(--bg-panel-hover) !important;
+  color: var(--text-primary) !important;
+}
+.react-flow__controls-button:last-child { border-bottom: none !important; }
+.react-flow__controls-button svg { fill: currentColor !important; }
+
+/* MiniMap */
+.react-flow__minimap {
+  background: var(--bg-panel) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 10px !important;
+  box-shadow: var(--shadow-panel) !important;
+}
+.react-flow__minimap-mask { fill: rgba(13,17,23,0.65) !important; }
+
+/* Edges */
+.react-flow__edge-path {
+  stroke: var(--indigo-light) !important;
+  stroke-width: 2 !important;
+  opacity: 0.7;
+}
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: var(--indigo) !important;
+  opacity: 1;
+}
+.react-flow__arrowhead path { fill: var(--indigo-light) !important; }
+
+/* Connection line */
+.react-flow__connection-path {
+  stroke: var(--indigo) !important;
+  stroke-width: 2 !important;
+  stroke-dasharray: 5 4;
+}
+
+/* Handles */
+.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  border: 2px solid var(--bg-panel) !important;
+  transition: all 0.15s ease;
+}
+.react-flow__handle:hover {
+  width: 14px !important;
+  height: 14px !important;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.35);
+}
+
+/* ── Node shimmer on hover ─────────────────────────────────────────── */
+@keyframes node-glow-pulse {
+  0%, 100% { box-shadow: var(--shadow-node); }
+  50%       { box-shadow: var(--shadow-node), var(--shadow-glow-indigo); }
+}
+
+/* ── Sidebar drag card pulse ───────────────────────────────────────── */
+@keyframes card-enter {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.sidebar-card { animation: card-enter 0.3s ease both; }
+
+/* ── Terminal cursor blink ─────────────────────────────────────────── */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.terminal-cursor { animation: cursor-blink 1s step-end infinite; }
+
+/* ── Panel slide-in ────────────────────────────────────────────────── */
+@keyframes panel-slide-in {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.panel-enter { animation: panel-slide-in 0.25s ease both; }
+
+/* ── Shimmer loading skeleton ──────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-panel) 25%, var(--bg-panel-hover) 50%, var(--bg-panel) 75%);
+  background-size: 200% auto;
+  animation: shimmer 1.5s linear infinite;
+  border-radius: 6px;
+}
+
+/* ── Form input resets ─────────────────────────────────────────────── */
+.form-input {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.form-input:focus {
+  border-color: var(--indigo);
+  box-shadow: 0 0 0 3px var(--indigo-glow);
+}
+.form-input::placeholder { color: var(--text-muted); }
+.form-input option { background: var(--bg-secondary); color: var(--text-primary); }
+
+/* ── Reduced motion ────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
