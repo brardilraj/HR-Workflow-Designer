@@ -13,7 +13,7 @@ npm install && npm run dev
 
 ---
 
-## 📸 Screenshots
+## ✨ Interface Highlights
 
 | Dark Mode | Light Mode |
 |---|---|
