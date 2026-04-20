@@ -136,7 +136,7 @@ React Flow docs warn that passing a new `nodeTypes` object on every render cause
 
 ```bash
 # 1. Clone the repository
-git clone <your-repo-url>
+git clone <https://github.com/brardilraj/HR-Workflow-Designer>
 cd hr-workflow-designer
 
 # 2. Install dependencies
