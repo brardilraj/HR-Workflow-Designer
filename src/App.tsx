@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import WorkflowCanvas from './components/canvas/WorkflowCanvas';
 import Sidebar from './components/canvas/Sidebar';
 import NodeFormPanel from './components/forms/NodeFormPanel';
