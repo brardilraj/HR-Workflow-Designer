@@ -4,7 +4,7 @@
 
 <br/>
 
-## ✨ Live Demo
+## ✨ Local Setup
 
 ```
 npm install && npm run dev
